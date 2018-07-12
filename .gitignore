@@ -1,0 +1,13 @@
+*.war
+*.ear
+*.iml
+*.class
+.idea/
+.svn/
+target/
+.project
+.mymetadata
+.classpath
+.settings/
+.DS_Store
+
