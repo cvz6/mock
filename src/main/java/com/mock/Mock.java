@@ -8,7 +8,7 @@ import com.mock.mocker.BaseMocker;
  * @author jsonzou, kanyuxia, TaoYu
  */
 @SuppressWarnings("unchecked")
-public class JMockData {
+public class Mock {
 
 
   /**
