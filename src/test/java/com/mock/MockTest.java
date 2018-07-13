@@ -25,13 +25,17 @@ public class MockTest {
     public void testBasic() {
         //基本类型模拟
         int intNum = Mock.mock(int.class);
-        System.out.println(intNum);
+        System.err.println(intNum);
+
         int[] intArray = Mock.mock(int[].class);
-        System.out.println(JsonUtil.toStr(intArray));
+        System.err.println(JsonUtil.toStr(intArray));
+
         Integer integer = Mock.mock(Integer.class);
-        assertNotNull(integer);
+        System.err.println(integer);
+
         Integer[] integerArray = Mock.mock(Integer[].class);
-        assertNotNull(integerArray);
+        System.err.println(JsonUtil.toStr(integerArray));
+
         //常用类型模拟
         BigDecimal bigDecimal = Mock.mock(BigDecimal.class);
         assertNotNull(bigDecimal);
@@ -44,11 +48,6 @@ public class MockTest {
         DayEnum dayEnum = Mock.mock(DayEnum.class);
         assertNotNull(dayEnum);
 
-        try {
-            Mock.mock(ErrorEnum.class);
-            fail();
-        } catch (Exception e) {
-        }
     }
 
     @Test
