@@ -6,7 +6,6 @@ import com.mock.bean.GenericData;
 import com.mock.bean.SelfRefData;
 import com.mock.bean.circular.AXB;
 import com.mock.bean.enums.DayEnum;
-import com.mock.bean.enums.ErrorEnum;
 import com.mock.util.JsonUtil;
 import org.junit.Test;
 
@@ -24,14 +23,62 @@ public class MockTest {
     @Test
     public void testBasic() {
         //基本类型模拟
-        int intNum = Mock.mock(int.class);
-        System.err.println(intNum);
+        byte byte1 = Mock.mock(byte.class);
+        System.err.println(byte1);
+
+        short short1 = Mock.mock(short.class);
+        System.err.println(short1);
+
+        int int1 = Mock.mock(int.class);
+        System.err.println(int1);
+
+        long long1 = Mock.mock(long.class);
+        System.err.println(long1);
+
+        double double1 = Mock.mock(double.class);
+        System.err.println(double1);
+
+        float float1 = Mock.mock(float.class);
+        System.err.println(float1);
+
+        char char1 = Mock.mock(char.class);
+        System.err.println(char1);
+
+        boolean boolean1 = Mock.mock(boolean.class);
+        System.err.println(boolean1);
+
+        //基本类型封装类模拟
+        Byte byte2 = Mock.mock(Byte.class);
+        System.err.println(byte2);
+
+        Short short2 = Mock.mock(Short.class);
+        System.err.println(short2);
+
+        Integer int2 = Mock.mock(Integer.class);
+        System.err.println(int2);
+
+        Long long2 = Mock.mock(Long.class);
+        System.err.println(long2);
+
+        Double double2 = Mock.mock(Double.class);
+        System.err.println(double2);
+
+        Float float2 = Mock.mock(Float.class);
+        System.err.println(float2);
+
+        Character char2 = Mock.mock(Character.class);
+        System.err.println(char2);
+
+        Boolean boolean2 = Mock.mock(Boolean.class);
+        System.err.println(boolean2);
+    }
+
+    @Test
+    public void testArray() {
 
         int[] intArray = Mock.mock(int[].class);
         System.err.println(JsonUtil.toStr(intArray));
 
-        Integer integer = Mock.mock(Integer.class);
-        System.err.println(integer);
 
         Integer[] integerArray = Mock.mock(Integer[].class);
         System.err.println(JsonUtil.toStr(integerArray));
@@ -47,7 +94,6 @@ public class MockTest {
         assertNotNull(str);
         DayEnum dayEnum = Mock.mock(DayEnum.class);
         assertNotNull(dayEnum);
-
     }
 
     @Test

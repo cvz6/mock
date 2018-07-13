@@ -2,6 +2,7 @@ package com.mock.bean;
 
 import com.mock.annotation.MockIgnore;
 import com.mock.bean.enums.DayEnum;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
@@ -10,9 +11,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import lombok.Data;
-
-@Data
 public class BasicBean {
 
   //基本类型
