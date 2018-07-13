@@ -7,6 +7,7 @@ import com.mock.bean.SelfRefData;
 import com.mock.bean.circular.AXB;
 import com.mock.bean.enums.DayEnum;
 import com.mock.bean.enums.ErrorEnum;
+import com.mock.util.JsonUtil;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -24,9 +25,9 @@ public class MockTest {
     public void testBasic() {
         //基本类型模拟
         int intNum = Mock.mock(int.class);
-        assertNotNull(intNum);
+        System.out.println(intNum);
         int[] intArray = Mock.mock(int[].class);
-        assertNotNull(intArray);
+        System.out.println(JsonUtil.toStr(intArray));
         Integer integer = Mock.mock(Integer.class);
         assertNotNull(integer);
         Integer[] integerArray = Mock.mock(Integer[].class);
@@ -123,7 +124,7 @@ public class MockTest {
                 .byteRange((byte) 0, Byte.MAX_VALUE)
                 .shortRange((short) 0, Short.MAX_VALUE)
                 .intRange(0, Integer.MAX_VALUE)
-                .floatRange(0.0f, Float.MAX_EXPONENT)
+                .floatRange(0.0f, Float.MAX_VALUE)
                 .doubleRange(0.0, Double.MAX_VALUE)
                 .longRange(0, Long.MAX_VALUE)
                 .dateRange("2010-01-01", "2020-12-30")
