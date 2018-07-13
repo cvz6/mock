@@ -71,6 +71,23 @@ public class MockTest {
 
         Boolean boolean2 = Mock.mock(Boolean.class);
         System.err.println(boolean2);
+
+        //常用类型模拟
+        //字符串
+        String string = Mock.mock(String.class);
+        System.err.println(string);
+        //大精度
+        BigDecimal bigDecimal = Mock.mock(BigDecimal.class);
+        System.err.println(bigDecimal);
+        //大整形
+        BigInteger bigInteger = Mock.mock(BigInteger.class);
+        System.out.println(bigInteger);
+        //日期
+        Date date = Mock.mock(Date.class);
+        System.out.println(date);
+        //枚举
+        DayEnum dayEnum = Mock.mock(DayEnum.class);
+        System.out.println(dayEnum);
     }
 
     @Test
@@ -83,17 +100,7 @@ public class MockTest {
         Integer[] integerArray = Mock.mock(Integer[].class);
         System.err.println(JsonUtil.toStr(integerArray));
 
-        //常用类型模拟
-        BigDecimal bigDecimal = Mock.mock(BigDecimal.class);
-        assertNotNull(bigDecimal);
-        BigInteger bigInteger = Mock.mock(BigInteger.class);
-        assertNotNull(bigInteger);
-        Date date = Mock.mock(Date.class);
-        assertNotNull(date);
-        String str = Mock.mock(String.class);
-        assertNotNull(str);
-        DayEnum dayEnum = Mock.mock(DayEnum.class);
-        assertNotNull(dayEnum);
+
     }
 
     @Test
