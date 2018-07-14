@@ -9,6 +9,7 @@ import com.mock.bean.enums.DayEnum;
 import com.mock.util.JsonUtil;
 import org.junit.Test;
 
+import javax.sound.midi.Soundbank;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
@@ -93,26 +94,154 @@ public class MockTest {
     @Test
     public void testArray() {
 
-        int[] intArray = Mock.mock(int[].class);
-        System.err.println(JsonUtil.toStr(intArray));
+       //基本类型 数组 模拟
+        byte[] byte1 = Mock.mock(byte[].class);
+        System.err.println(JsonUtil.toStr(byte1));//byte转json 这里做了new string 打印是string
+        //循环打印出来
+        for (byte b:byte1){
+            System.out.println(b);
+        }
+
+        short[] short1 = Mock.mock(short[].class);
+        System.err.println(JsonUtil.toStr(short1));
+
+        int[] int1 = Mock.mock(int[].class);
+        System.err.println(JsonUtil.toStr(int1));
+
+        long[] long1 = Mock.mock(long[].class);
+        System.err.println(JsonUtil.toStr(long1));
+
+        double[] double1 = Mock.mock(double[].class);
+        System.err.println(JsonUtil.toStr(double1));
+
+        float[] float1 = Mock.mock(float[].class);
+        System.err.println(JsonUtil.toStr(float1));
+
+        char[] char1 = Mock.mock(char[].class);
+        System.err.println(JsonUtil.toStr(char1));
+
+        boolean[] boolean1 = Mock.mock(boolean[].class);
+        System.err.println(JsonUtil.toStr(boolean1));
+
+        //基本类型封装类模拟
+        Byte[] byte2 = Mock.mock(Byte[].class);
+        System.err.println(JsonUtil.toStr(byte2));
+
+        Short[] short2 = Mock.mock(Short[].class);
+        System.err.println(JsonUtil.toStr(short2));
+
+        Integer[] int2 = Mock.mock(Integer[].class);
+        System.err.println(JsonUtil.toStr(int2));
+
+        Long[] long2 = Mock.mock(Long[].class);
+        System.err.println(JsonUtil.toStr(long2));
+
+        Double[] double2 = Mock.mock(Double[].class);
+        System.err.println(JsonUtil.toStr(double2));
+
+        Float[] float2 = Mock.mock(Float[].class);
+        System.err.println(JsonUtil.toStr(float2));
+
+        Character[] char2 = Mock.mock(Character[].class);
+        System.err.println(JsonUtil.toStr(char2));
+
+        Boolean[] boolean2 = Mock.mock(Boolean[].class);
+        System.err.println(JsonUtil.toStr(boolean2));
+
+        //常用类型 数组 模拟
+        //字符串
+        String[] string = Mock.mock(String[].class);
+        System.err.println(JsonUtil.toStr(string));
+        //大精度
+        BigDecimal[] bigDecimal = Mock.mock(BigDecimal[].class);
+        System.err.println(JsonUtil.toStr(bigDecimal));
+        //大整形
+        BigInteger[] bigInteger = Mock.mock(BigInteger[].class);
+        System.out.println(JsonUtil.toStr(bigInteger));
+        //日期
+        Date[] date = Mock.mock(Date[].class);
+        System.out.println(JsonUtil.toStr(date));
+        //枚举
+        DayEnum[] dayEnum = Mock.mock(DayEnum[].class);
+        System.out.println(JsonUtil.toStr(dayEnum));
+    }
 
 
-        Integer[] integerArray = Mock.mock(Integer[].class);
-        System.err.println(JsonUtil.toStr(integerArray));
+    @Test
+    public void testArray2() {
 
+        //基本类型 二维数组 模拟
+        byte[][] byte1 = Mock.mock(byte[][].class);
+        System.err.println(JsonUtil.toStr(byte1));//byte转json 这里做了new string 打印是string
 
+        short[][] short1 = Mock.mock(short[][].class);
+        System.err.println(JsonUtil.toStr(short1));
+
+        int[][] int1 = Mock.mock(int[][].class);
+        System.err.println(JsonUtil.toStr(int1));
+
+        long[][] long1 = Mock.mock(long[][].class);
+        System.err.println(JsonUtil.toStr(long1));
+
+        double[][] double1 = Mock.mock(double[][].class);
+        System.err.println(JsonUtil.toStr(double1));
+
+        float[][] float1 = Mock.mock(float[][].class);
+        System.err.println(JsonUtil.toStr(float1));
+
+        char[][] char1 = Mock.mock(char[][].class);
+        System.err.println(JsonUtil.toStr(char1));
+
+        boolean[][] boolean1 = Mock.mock(boolean[][].class);
+        System.err.println(JsonUtil.toStr(boolean1));
+
+        //基本类型封装类模拟
+        Byte[][] byte2 = Mock.mock(Byte[][].class);
+        System.err.println(JsonUtil.toStr(byte2));
+
+        Short[][] short2 = Mock.mock(Short[][].class);
+        System.err.println(JsonUtil.toStr(short2));
+
+        Integer[][] int2 = Mock.mock(Integer[][].class);
+        System.err.println(JsonUtil.toStr(int2));
+
+        Long[][] long2 = Mock.mock(Long[][].class);
+        System.err.println(JsonUtil.toStr(long2));
+
+        Double[][] double2 = Mock.mock(Double[][].class);
+        System.err.println(JsonUtil.toStr(double2));
+
+        Float[][] float2 = Mock.mock(Float[][].class);
+        System.err.println(JsonUtil.toStr(float2));
+
+        Character[][] char2 = Mock.mock(Character[][].class);
+        System.err.println(JsonUtil.toStr(char2));
+
+        Boolean[][] boolean2 = Mock.mock(Boolean[][].class);
+        System.err.println(JsonUtil.toStr(boolean2));
+
+        //常用类型 数组 模拟
+        //字符串
+        String[][] string = Mock.mock(String[][].class);
+        System.err.println(JsonUtil.toStr(string));
+        //大精度
+        BigDecimal[][] bigDecimal = Mock.mock(BigDecimal[][].class);
+        System.err.println(JsonUtil.toStr(bigDecimal));
+        //大整形
+        BigInteger[][] bigInteger = Mock.mock(BigInteger[][].class);
+        System.out.println(JsonUtil.toStr(bigInteger));
+        //日期
+        Date[][] date = Mock.mock(Date[][].class);
+        System.out.println(JsonUtil.toStr(date));
+        //枚举
+        DayEnum[][] dayEnum = Mock.mock(DayEnum[][].class);
+        System.out.println(JsonUtil.toStr(dayEnum));
     }
 
     @Test
     public void testBasicData() {
         BasicBean basicBean = Mock.mock(BasicBean.class);
-        assertNotNull(basicBean);
-
-        try {
-            Mock.mock(ErrorBean.class);
-            fail();
-        } catch (Exception e) {
-        }
+        System.out.println(JsonUtil.toStr(basicBean));;
     }
 
     @Test
