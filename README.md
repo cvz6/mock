@@ -1,21 +1,11 @@
-# Jmockdata
-[![Build Status](https://www.travis-ci.org/jsonzou/jmockdata.svg?branch=master)](https://www.travis-ci.org/jsonzou/jmockdata)
-[![Coverage Status](https://coveralls.io/repos/github/jsonzou/jmockdata/badge.svg)](https://coveralls.io/github/jsonzou/jmockdata)
-[![Maven central](https://maven-badges.herokuapp.com/maven-central/com.github.jsonzou/jmockdata/badge.svg)](http://mvnrepository.com/artifact/com.github.jsonzou/jmockdata)
-[![License](http://img.shields.io/:license-apache-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+# Mock
+Mock是一个Java实现的模拟任何数据的小工具。
 
+#来源
+公司技术架构为前后台分类开发，在后端接口没有完成时需要返回模拟数据，测试时也需要模拟数据，于是需要一个可以模拟任意数据的工具，企业开发从头写自己实现是不现实的，太浪费时间，于是github找了一个适合的进行修改，于是有了现在的mock。
+修改自jsonzou的[jmockdata](https://github.com/jsonzou/jmockdata) 进行少许修改。
 
-Jmockdta是一款实现模拟JAVA类型或对象的实例化并随机初始化对象的数据的工具框架。单元测试的利器。
-
-![mark](http://p1wz9nw0p.bkt.clouddn.com/blog/180118/0DaEC98Kib.png?imageslim)
-
-The plugin of Jmockdata what through random algorithm mock java data.  
-Jmockdata插件通过随机算法模拟Java数据.  
-
-![mark](http://p1wz9nw0p.bkt.clouddn.com/blog/180118/dclH8cgg30.png?imageslim)
-
-## Feature
-
+## 特色
 * 支持丰富多样的数据类型模拟，包括：Java基本类型、字符串、枚举、日期、数组、多维数组、集合[List|Set|Map]、枚举、Java对象等
 * 支持泛型
 * 支持继承
@@ -23,39 +13,8 @@ Jmockdata插件通过随机算法模拟Java数据.
 * 支持忽略字段
 * 支持改变mockConfig来自定义模拟数据策略
 * 支持JDK1.7+，无任何第三方依赖
+* 源代码仅有60K，很小
 
-
-## Download
-
-> 
-### _Jmockdata-3.1.0_
-#### Jar
-> [Jmockdata-3.1.0](http://repo.maven.apache.org/maven2/com/github/jsonzou/jmockdata/3.1.0/jmockdata-3.1.0.jar)
-#### Maven
- ```
-   <dependency>
-      <groupId>com.github.jsonzou</groupId>
-      <artifactId>jmockdata</artifactId>
-      <version>3.1.0</version>
-    </dependency>
-  ```
-#### Gradle
- ```
-   compile group: 'com.github.jsonzou', name: 'jmockdata', version: '3.1.0'
-  ```
-## History version
-- 1.0
-- 2.0
-- 2.1
-- 2.2
-- 2.3
-- 2.4
-- 3.0.0
-- 3.0.1
-- 3.1.0
-
-
-## Usage 
 
 ### 基础类型
 

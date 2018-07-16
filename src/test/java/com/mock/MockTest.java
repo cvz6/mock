@@ -1,15 +1,11 @@
 package com.mock;
 
-import com.mock.bean.BasicBean;
-import com.mock.bean.ErrorBean;
-import com.mock.bean.GenericData;
-import com.mock.bean.SelfRefData;
+import com.mock.bean.*;
 import com.mock.bean.circular.AXB;
 import com.mock.bean.enums.DayEnum;
 import com.mock.util.JsonUtil;
 import org.junit.Test;
 
-import javax.sound.midi.Soundbank;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
@@ -243,6 +239,16 @@ public class MockTest {
         BasicBean basicBean = Mock.mock(BasicBean.class);
         System.out.println(JsonUtil.toStr(basicBean));;
     }
+
+    /**
+     * 测试忽略属性
+     */
+    @Test
+    public void testIgnore() {
+        IgnoreBean a = Mock.mock(IgnoreBean.class);
+        System.err.println(JsonUtil.toStr(a));;
+    }
+
 
     @Test
     public void testCircular() {
