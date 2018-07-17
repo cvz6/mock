@@ -433,6 +433,16 @@ public class MockTest {
         System.out.println(JsonUtil.toStr(mock));
     }
 
+    /**
+     * 测试返回汉语句子
+     */
+    @Test
+    public void testUUID() {
+        StringBean mock = Mock.mock(StringBean.class,new MockConfig().setStringEnum(MockConfig.StringEnum.UUID));
+        System.out.println(JsonUtil.toStr(mock));
+    }
+
+
 
     //测试识别 是否为 泛型类型
     @Test

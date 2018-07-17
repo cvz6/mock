@@ -5,6 +5,8 @@ import com.mock.Mocker;
 import com.mock.util.RandomUtils;
 import com.mock.util.StringUtil;
 
+import java.util.UUID;
+
 /**
  * 模拟String对象
  */
@@ -17,6 +19,9 @@ public class StringMocker implements Mocker<String> {
 
         if (mockConfig.getStringEnum() == MockConfig.StringEnum.CHARACTER) {
             return mockerCharacter(mockConfig);
+        }
+        if (mockConfig.getStringEnum() == MockConfig.StringEnum.UUID) {
+            return UUID.randomUUID().toString();
         }
         return mockChinese(mockConfig);
     }
