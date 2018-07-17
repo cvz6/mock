@@ -37,7 +37,7 @@ Mock是一个Java实现的，可以模拟任何数据的框架。
 T t = Mock.mock(T.class);
 ```
 
-T可以是任意类型，如果T带有泛型，比如T为List<String>，那么使用如下方式
+T可以是任意类型，如果T带有泛型，比如T为List <String> ，那么使用如下方式
     
 ```java
 T t = Mock.mock(new TypeKit<List<String>>() {});
