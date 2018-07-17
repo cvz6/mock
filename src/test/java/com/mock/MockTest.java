@@ -322,38 +322,38 @@ public class MockTest {
         //模拟基础类型，不建议使用这种方式，参考基础类型章节直接模拟。
         Integer integerNum = Mock.mock(new TypeKit<Integer>() {
         });
-        assertNotNull(integerNum);
+        System.err.println(JsonUtil.toStr(integerNum));
         Integer[] integerArray = Mock.mock(new TypeKit<Integer[]>() {
         });
-        assertNotNull(integerArray);
+        System.err.println(JsonUtil.toStr(integerArray));
         //模拟集合
         List<Integer> integerList = Mock.mock(new TypeKit<List<Integer>>() {
         });
-        assertNotNull(integerList);
+        System.err.println(JsonUtil.toStr(integerList));
         //模拟数组集合
         List<Integer[]> integerArrayList = Mock.mock(new TypeKit<List<Integer[]>>() {
         });
-        assertNotNull(integerArrayList);
+        System.err.println(JsonUtil.toStr(integerArrayList));
         //模拟集合数组
         List<Integer>[] integerListArray = Mock.mock(new TypeKit<List<Integer>[]>() {
         });
-        assertNotNull(integerListArray);
+        System.err.println(JsonUtil.toStr(integerListArray));
         //模拟集合实体
         List<BasicBean> basicBeanList = Mock.mock(new TypeKit<List<BasicBean>>() {
         });
-        assertNotNull(basicBeanList);
+        System.err.println(JsonUtil.toStr(basicBeanList));
         //各种组合忽略。。。。map同理。下面模拟一个不知道什么类型的map
         Map<List<Map<Integer, String[][]>>, Map<Set<String>, Double[]>> some = Mock
                 .mock(new TypeKit<Map<List<Map<Integer, String[][]>>, Map<Set<String>, Double[]>>>() {
                 });
-        assertNotNull(some);
+        System.err.println(JsonUtil.toStr(some));
     }
 
     @Test
     public void testGenericData() {
         GenericData<Integer, String, BasicBean> genericData = Mock.mock(new TypeKit<GenericData<Integer, String, BasicBean>>() {
         });
-        assertNotNull(genericData);
+        System.err.println(JsonUtil.toStr(genericData));
     }
 
     @Test
@@ -410,6 +410,25 @@ public class MockTest {
         MockConfig mockConfig = new MockConfig().setEnabledCircle(true);
         SelfRefData selfRefData = Mock.mock(SelfRefData.class, mockConfig);
         assertSame(selfRefData.getParent(), selfRefData);
+    }
+
+    /**
+     * 测试返回汉语句子
+     */
+    @Test
+    public void testChineseString() {
+        String mock = Mock.mock(String.class);
+        System.out.println(mock);
+    }
+
+
+    /**
+     * 测试返回汉语句子
+     */
+    @Test
+    public void testChineseStringBean() {
+        StringBean mock = Mock.mock(StringBean.class);
+        System.out.println(JsonUtil.toStr(mock));
     }
 
 }

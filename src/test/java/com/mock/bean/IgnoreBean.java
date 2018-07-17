@@ -1,6 +1,6 @@
 package com.mock.bean;
 
-import jdk.nashorn.internal.ir.annotations.Ignore;
+import com.mock.annotation.MockIgnore;
 
 /**
  * @author :  peng.liu
@@ -8,7 +8,7 @@ import jdk.nashorn.internal.ir.annotations.Ignore;
  * @date :    2018/7/16 10:13
  */
 public class IgnoreBean {
-    @Ignore
+    @MockIgnore
     private String ignore;
     private int notIgnore;
 
