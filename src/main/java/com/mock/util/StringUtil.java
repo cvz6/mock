@@ -65,7 +65,7 @@ public class StringUtil {
     public static String readerText() {
         StringBuilder text = new StringBuilder();
         //读取文件
-        InputStream stream = StringUtil.class.getClassLoader().getResourceAsStream("String.text");
+        InputStream stream = StringUtil.class.getClassLoader().getResourceAsStream("resources/String.text");
         String line = null;
         try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(stream))
         ) {
