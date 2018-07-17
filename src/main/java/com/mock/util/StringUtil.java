@@ -60,33 +60,27 @@ public class StringUtil {
     /**
      * 读取text文本
      *
-     * @param path 文件路径
      * @return String
      */
-    public static String readerText(String path) {
+    public static String readerText() {
         StringBuilder text = new StringBuilder();
         //读取文件
-        File file = new File(path);
-        if (file.isFile() && file.exists()) { //判断文件是否存在
-            String line = null;
-            try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file)))
-            ) {
-                while ((line = bufferedReader.readLine()) != null) {
-                    text.append(line.toString());  //去除空白字符
-                }
-//                System.out.println(text);
-            } catch (IOException e) {
-                e.printStackTrace();
+        InputStream stream = StringUtil.class.getClassLoader().getResourceAsStream("String.text");
+        String line = null;
+        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(stream))
+        ) {
+            while ((line = bufferedReader.readLine()) != null) {
+                text.append(line.toString());  //去除空白字符
             }
-
-        } else {
-            System.err.println("找不到指定的文件");
+//                System.out.println(text);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         return text.toString();
     }
 
     public static void main(String[] args) {
-        String s = readerText("target/classes/String.text");
+        String s = readerText();
         System.out.println(s);
     }
 }

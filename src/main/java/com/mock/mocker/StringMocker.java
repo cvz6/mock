@@ -12,7 +12,7 @@ import java.util.UUID;
  */
 public class StringMocker implements Mocker<String> {
     //汉语 种子内容
-    private static final String STR = StringUtil.readerText("target/classes/String.text");
+    private static final String STR = StringUtil.readerText();
 
     @Override
     public String mock(MockConfig mockConfig) {
