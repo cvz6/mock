@@ -40,7 +40,7 @@ public class Mock {
    * @param typeReference 模拟数据包装类型
    * @return 模拟数据对象
    */
-  public static <T> T mock(TypeReference<T> typeReference) {
+  public static <T> T mock(TypeKit<T> typeReference) {
     return mock(typeReference, new MockConfig());
   }
 
@@ -54,7 +54,7 @@ public class Mock {
    * @param mockConfig 模拟数据配置
    * @return 模拟数据对象
    */
-  public static <T> T mock(TypeReference<T> typeReference, MockConfig mockConfig) {
+  public static <T> T mock(TypeKit<T> typeReference, MockConfig mockConfig) {
     return new BaseMocker<T>(typeReference.getType()).mock(mockConfig.init(typeReference.getType()));
   }
 

@@ -8,10 +8,7 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
@@ -316,59 +313,45 @@ public class MockTest {
         System.out.println(JsonUtil.toStr(dayEnum));
     }
 
-
-
+    /**
+     * 任意类型
+     * 注意TypeReference要加{}才能模拟
+     */
     @Test
-    public void testCircular() {
-        MockConfig mockConfig = new MockConfig().setEnabledCircle(true);
-        AXB axb = Mock.mock(AXB.class, mockConfig);
-        AXB circularAxb = axb.getBXA().getAXB();
-        assertSame(axb, circularAxb);
-    }
-
-    @Test
-    public void testSelf() {
-        MockConfig mockConfig = new MockConfig().setEnabledCircle(true);
-        SelfRefData selfRefData = Mock.mock(SelfRefData.class, mockConfig);
-        assertSame(selfRefData.getParent(), selfRefData);
-    }
-
-    @Test
-    //******注意TypeReference要加{}才能模拟******
     public void testTypeRefrence() {
         //模拟基础类型，不建议使用这种方式，参考基础类型章节直接模拟。
-        Integer integerNum = Mock.mock(new TypeReference<Integer>() {
+        Integer integerNum = Mock.mock(new TypeKit<Integer>() {
         });
         assertNotNull(integerNum);
-        Integer[] integerArray = Mock.mock(new TypeReference<Integer[]>() {
+        Integer[] integerArray = Mock.mock(new TypeKit<Integer[]>() {
         });
         assertNotNull(integerArray);
         //模拟集合
-        List<Integer> integerList = Mock.mock(new TypeReference<List<Integer>>() {
+        List<Integer> integerList = Mock.mock(new TypeKit<List<Integer>>() {
         });
         assertNotNull(integerList);
         //模拟数组集合
-        List<Integer[]> integerArrayList = Mock.mock(new TypeReference<List<Integer[]>>() {
+        List<Integer[]> integerArrayList = Mock.mock(new TypeKit<List<Integer[]>>() {
         });
         assertNotNull(integerArrayList);
         //模拟集合数组
-        List<Integer>[] integerListArray = Mock.mock(new TypeReference<List<Integer>[]>() {
+        List<Integer>[] integerListArray = Mock.mock(new TypeKit<List<Integer>[]>() {
         });
         assertNotNull(integerListArray);
         //模拟集合实体
-        List<BasicBean> basicBeanList = Mock.mock(new TypeReference<List<BasicBean>>() {
+        List<BasicBean> basicBeanList = Mock.mock(new TypeKit<List<BasicBean>>() {
         });
         assertNotNull(basicBeanList);
         //各种组合忽略。。。。map同理。下面模拟一个不知道什么类型的map
         Map<List<Map<Integer, String[][]>>, Map<Set<String>, Double[]>> some = Mock
-                .mock(new TypeReference<Map<List<Map<Integer, String[][]>>, Map<Set<String>, Double[]>>>() {
+                .mock(new TypeKit<Map<List<Map<Integer, String[][]>>, Map<Set<String>, Double[]>>>() {
                 });
         assertNotNull(some);
     }
 
     @Test
     public void testGenericData() {
-        GenericData<Integer, String, BasicBean> genericData = Mock.mock(new TypeReference<GenericData<Integer, String, BasicBean>>() {
+        GenericData<Integer, String, BasicBean> genericData = Mock.mock(new TypeKit<GenericData<Integer, String, BasicBean>>() {
         });
         assertNotNull(genericData);
     }
@@ -410,6 +393,23 @@ public class MockTest {
     public void testIgnore() {
         IgnoreBean a = Mock.mock(IgnoreBean.class);
         System.err.println(JsonUtil.toStr(a));;
+    }
+
+
+
+    @Test
+    public void testCircular() {
+        MockConfig mockConfig = new MockConfig().setEnabledCircle(true);
+        AXB axb = Mock.mock(AXB.class, mockConfig);
+        AXB circularAxb = axb.getBXA().getAXB();
+        assertSame(axb, circularAxb);
+    }
+
+    @Test
+    public void testSelf() {
+        MockConfig mockConfig = new MockConfig().setEnabledCircle(true);
+        SelfRefData selfRefData = Mock.mock(SelfRefData.class, mockConfig);
+        assertSame(selfRefData.getParent(), selfRefData);
     }
 
 }
