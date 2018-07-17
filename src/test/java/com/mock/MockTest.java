@@ -6,6 +6,8 @@ import com.mock.bean.enums.DayEnum;
 import com.mock.util.JsonUtil;
 import org.junit.Test;
 
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.*;
@@ -429,6 +431,17 @@ public class MockTest {
     public void testChineseStringBean() {
         StringBean mock = Mock.mock(StringBean.class);
         System.out.println(JsonUtil.toStr(mock));
+    }
+
+
+    //测试识别 是否为 泛型类型
+    @Test
+    public void isParamType(){
+        Type superClass = new ArrayList<String>().getClass().getGenericSuperclass();
+        System.out.println(superClass instanceof ParameterizedType);
+
+        Type genericSuperclass = int.class.getGenericSuperclass();
+        System.out.println(genericSuperclass instanceof ParameterizedType);
     }
 
 }
