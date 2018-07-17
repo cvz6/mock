@@ -47,20 +47,44 @@
         </dependency>
     </dependencies>
 
+
     <build>
-    <plugins>
-        <!--compiler插件-->
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.6.1</version>
-            <configuration>
-                <source>${java.version}</source>
-                <target>${java.version}</target>
-                <encoding>UTF-8</encoding>
-            </configuration>
-        </plugin>
-    </plugins>
+        <!--打包资源文件-->
+        <resources>
+            <resource>
+                <directory>src/main</directory>
+                <includes>
+                    <!-- **/* 写法，可以将各级子目录下的资源文件被打包 -->
+                    <include>**/*</include>
+                </includes>
+                <!--<excludes>
+                    <exclude>**/*generatorConfig*.xml</exclude>
+                </excludes>-->
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+
+        <plugins>
+            <!--compiler插件-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <!--跳过测试-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
 </project>
