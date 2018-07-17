@@ -355,7 +355,6 @@ public class MockTest {
     public void testGenericData() {
         GenericData<Integer, String, BasicBean> genericData = Mock.mock(new TypeKit<GenericData<Integer, String, BasicBean>>() {
         });
-        System.err.println(JsonUtil.toStr(genericData));
     }
 
     @Test
@@ -372,13 +371,8 @@ public class MockTest {
                 .stringSeed("a", "b", "c")
                 .charSeed((char) 97, (char) 98);
         BasicBean basicBean = Mock.mock(BasicBean.class, mockConfig);
-        assertNotNull(basicBean);
+        System.out.println(JsonUtil.toStr(basicBean));
 
-        try {
-            Mock.mock(BasicBean.class, new MockConfig().dateRange("20100101", "20301230"));
-            fail();
-        } catch (Exception e) {
-        }
     }
 
 
