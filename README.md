@@ -1,13 +1,6 @@
 # Mock
 Mock是一个Java实现的，可以模拟任何数据的框架。
 
-# Mock来源
-
-公司技术架构为前后台分类开发，在后端接口没有完成时需要返回模拟数据，测试时也需要模拟数据，于是需要一个可以模拟任意数据的工具，企业开发种从头写自己实现是不现实的，太浪费时间，于是github找了一个适合的进行修改，于是有了现在的mock。
-
-修改自jsonzou的[jmockdata](https://github.com/jsonzou/jmockdata)
-
-再次感谢大佬的源代码，阅读收益良多，也帮我快速解决了数据模拟的问题https://github.com/jsonzou/jmockdata
 
 ## 特色
 * 支持丰富多样的数据类型模拟，包括：Java基本类型、字符串、枚举、日期、数组、多维数组、集合[List|Set|Map]、枚举、Java对象等
@@ -734,6 +727,12 @@ public void testGenericData() {
 3. 生成超长文本，字符串大于65535个字符
 4. 生成各种文字的混合体，默认编码utf-8
 其他骚操作，以后用到再说吧
+# Mock来源
 
+公司技术架构为前后台分类开发，在后端接口没有完成时需要返回模拟数据，测试时也需要模拟数据，于是需要一个可以模拟任意数据的工具，企业开发种从头写自己实现是不现实的，太浪费时间，于是github找了一个适合的进行修改，于是有了现在的mock。
+
+修改自jsonzou的[jmockdata](https://github.com/jsonzou/jmockdata)
+
+再次感谢大佬的源代码，阅读收益良多，也帮我快速解决了数据模拟的问题https://github.com/jsonzou/jmockdata
 #### 加入qq群交流 317896269
 
