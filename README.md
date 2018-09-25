@@ -40,9 +40,9 @@ T t = Mock.mock(T.class);
 T可以是任意类型，如果T带有泛型，比如T为List <String> ，那么使用如下方式
     
 ```java
-T t = Mock.mock(new TypeKit<List<String>>() {});
+T t = Mock.mock(new TypeReference<List<String>>() {});
 ```
-TypeKit是一个封装类，目的是封装要获取的泛型类型
+TypeReference是一个封装类，目的是封装要获取的泛型类型
 
 其他使用方式，高级模拟方式以及详细使用参考测试代码（标注Maven工程的test包下）
 
@@ -358,31 +358,31 @@ TypeKit是一个封装类，目的是封装要获取的泛型类型
     @Test
     public void testTypeRefrence() {
         //模拟基础类型，不建议使用这种方式，参考基础类型章节直接模拟。
-        Integer integerNum = Mock.mock(new TypeKit<Integer>() {
+        Integer integerNum = Mock.mock(new TypeReference<Integer>() {
         });
         System.err.println(JsonUtil.toStr(integerNum));
-        Integer[] integerArray = Mock.mock(new TypeKit<Integer[]>() {
+        Integer[] integerArray = Mock.mock(new TypeReference<Integer[]>() {
         });
         System.err.println(JsonUtil.toStr(integerArray));
         //模拟集合
-        List<Integer> integerList = Mock.mock(new TypeKit<List<Integer>>() {
+        List<Integer> integerList = Mock.mock(new TypeReference<List<Integer>>() {
         });
         System.err.println(JsonUtil.toStr(integerList));
         //模拟数组集合
-        List<Integer[]> integerArrayList = Mock.mock(new TypeKit<List<Integer[]>>() {
+        List<Integer[]> integerArrayList = Mock.mock(new TypeReference<List<Integer[]>>() {
         });
         System.err.println(JsonUtil.toStr(integerArrayList));
         //模拟集合数组
-        List<Integer>[] integerListArray = Mock.mock(new TypeKit<List<Integer>[]>() {
+        List<Integer>[] integerListArray = Mock.mock(new TypeReference<List<Integer>[]>() {
         });
         System.err.println(JsonUtil.toStr(integerListArray));
         //模拟集合实体
-        List<BasicBean> basicBeanList = Mock.mock(new TypeKit<List<BasicBean>>() {
+        List<BasicBean> basicBeanList = Mock.mock(new TypeReference<List<BasicBean>>() {
         });
         System.err.println(JsonUtil.toStr(basicBeanList));
         //各种组合忽略。。。。map同理。下面模拟一个不知道什么类型的map
         Map<List<Map<Integer, String[][]>>, Map<Set<String>, Double[]>> some = Mock
-                .mock(new TypeKit<Map<List<Map<Integer, String[][]>>, Map<Set<String>, Double[]>>>() {
+                .mock(new TypeReference<Map<List<Map<Integer, String[][]>>, Map<Set<String>, Double[]>>>() {
                 });
         System.err.println(JsonUtil.toStr(some));
     }

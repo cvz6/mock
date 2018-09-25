@@ -322,38 +322,38 @@ public class MockTest {
     @Test
     public void testTypeRefrence() {
         //模拟基础类型，不建议使用这种方式，参考基础类型章节直接模拟。
-        Integer integerNum = Mock.mock(new TypeKit<Integer>() {
+        Integer integerNum = Mock.mock(new TypeReference<Integer>() {
         });
         System.err.println(JsonUtil.toStr(integerNum));
-        Integer[] integerArray = Mock.mock(new TypeKit<Integer[]>() {
+        Integer[] integerArray = Mock.mock(new TypeReference<Integer[]>() {
         });
         System.err.println(JsonUtil.toStr(integerArray));
         //模拟集合
-        List<Integer> integerList = Mock.mock(new TypeKit<List<Integer>>() {
+        List<Integer> integerList = Mock.mock(new TypeReference<List<Integer>>() {
         });
         System.err.println(JsonUtil.toStr(integerList));
         //模拟数组集合
-        List<Integer[]> integerArrayList = Mock.mock(new TypeKit<List<Integer[]>>() {
+        List<Integer[]> integerArrayList = Mock.mock(new TypeReference<List<Integer[]>>() {
         });
         System.err.println(JsonUtil.toStr(integerArrayList));
         //模拟集合数组
-        List<Integer>[] integerListArray = Mock.mock(new TypeKit<List<Integer>[]>() {
+        List<Integer>[] integerListArray = Mock.mock(new TypeReference<List<Integer>[]>() {
         });
         System.err.println(JsonUtil.toStr(integerListArray));
         //模拟集合实体
-        List<BasicBean> basicBeanList = Mock.mock(new TypeKit<List<BasicBean>>() {
+        List<BasicBean> basicBeanList = Mock.mock(new TypeReference<List<BasicBean>>() {
         });
         System.err.println(JsonUtil.toStr(basicBeanList));
         //各种组合忽略。。。。map同理。下面模拟一个不知道什么类型的map
         Map<List<Map<Integer, String[][]>>, Map<Set<String>, Double[]>> some = Mock
-                .mock(new TypeKit<Map<List<Map<Integer, String[][]>>, Map<Set<String>, Double[]>>>() {
+                .mock(new TypeReference<Map<List<Map<Integer, String[][]>>, Map<Set<String>, Double[]>>>() {
                 });
         System.err.println(JsonUtil.toStr(some));
     }
 
     @Test
     public void testGenericData() {
-        GenericData<Integer, String, BasicBean> genericData = Mock.mock(new TypeKit<GenericData<Integer, String, BasicBean>>() {
+        GenericData<Integer, String, BasicBean> genericData = Mock.mock(new TypeReference<GenericData<Integer, String, BasicBean>>() {
         });
     }
 
